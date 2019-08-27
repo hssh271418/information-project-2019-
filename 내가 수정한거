@@ -1,0 +1,46 @@
+[프로젝트 1 : 부등식을 만족하는 영역안의 점묘화 그리기]<br>
+1)연구소 이름 : 폴라짱의 카와이한 연구소<br>
+2)연구소가 해결하려는 문제 : 점묘화 미술숙제에 어려움을 겪고 있는 폴라짱을위해 점묘화 그려주는 코드<br>
+3)연구소의 깃헙 링크 : https://github.com/1507Kimdongkyu/information-project-2019-<br>
+4)내가 기여한 내용<br>
+```python
+x_1 = input("1째 점의 x좌표를 입력해 주세요")
+y_1 = input("1째 점의 y좌표를 입력해 주세요")
+ #1,3번 방정식의 해
+x_2 =input("2째 점의 x좌표를 입력해 주세요")
+y_2 =input("2째 점의 y좌표를 입력해 주세요")
+ #2,3번 방정식의 해
+x_3=input("2째 점의 x좌표를 입력해 주세요")
+y_3=input("2째 점의 y좌표를 입력해 주세요")
+#랜덤하게 뿌린 점을 담을 리스트와 그 중에서 영역 안에 포함된 점을 담을 리스트 설정
+randompoint=[]
+conditionpoint=[]
+#세 방정식으로 만들어진 도형(삼각형)을 포함하는 최소의 직사각형 안에 랜덤하게 점을 뿌리기
+a=max(x_1,x_2,x_3)
+b=min(x_1,x_2,x_3)
+c=max(y_1,y_2,y_3)
+d=min(y_1,y_2,y_3)
+for i in range(1000):
+    randompoint += [[0.01*random.randint(100*int(b),100*(int(a)+1)), 0.01*random.randint(100*int(d),100*(int(c)+1))]]
+# 이 중 조건을 만족하는 점들을 다른 리스트에 담기
+for i in range(len(randompoint)):
+    if a_1*randompoint[i][0]+b_1*randompoint[i][1]+c_1>0 and a_2*randompoint[i][0]+b_2*randompoint[i][1]+c_2>0 and a_3*randompoint[i][0]+b_3*randompoint[i][1]+c_3>0:
+        conditionpoint.append(randompoint[i])
+#그래프 그리기
+list_x=[]
+list_y=[]
+for i in range(len(conditionpoint)):
+    list_x = list_x + [conditionpoint[i][0]]
+    list_y = list_y + [conditionpoint[i][1]]
+plt.scatter(list_x ,list_y)
+plt.show()
+```
+5)내가 기여한 내용에 대한 설명<br>
+원래의 코드에서는 점묘화로 채울 삼각형을 세변의 직선의 <br>
+방정식을 이용해 정의했지만 나는 실제로 그리러 하는 영역의 <br>
+각변을 직선의 방정식으로 구하는 것은 귀찮다고 생각하여<br>
+삼각형의 세꼭짓점의 좌표를 정해서 정의해 보았다.<br>
+이것을 응용하면 폴라짱은 삼각형 말고도 여러 도형을 그릴 수 있지<br>
+않을 까??<br>
+6)내가 기여한 내용의 반영 여부 : (O,X 중 선택해주세요)<br>
+
